@@ -858,7 +858,7 @@ html {
   .navbar {
     display: none;
     flex-direction: column;
-    background-color: #f8f8f8;
+     background: #191c24;
     position: absolute;
     top: 60px;
     left: 0;
