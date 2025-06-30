@@ -836,7 +836,7 @@ html {
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  background-color: #f8f8f8;
+  background-color:transparent;
   position: relative;
 }
 
@@ -858,7 +858,7 @@ html {
   .navbar {
     display: none;
     flex-direction: column;
-     background: #191c24;
+     background-color: transparent;
     position: absolute;
     top: 60px;
     left: 0;
