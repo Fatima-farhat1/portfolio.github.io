@@ -17,39 +17,6 @@ body{
     cursor: pointer;
 }
 
-/* Responsive (Mobile View) */
-@media (max-width: 768px) {
-    .navbar {
-        position: absolute;
-        top: 70px; /* adjust based on header height */
-        left: 0;
-        width: 100%;
-        background: #191c24;
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        z-index: 99;
-    }
-
-    .navbar.active {
-        display: flex;
-    }
-
-    #menu-icon {
-        display: block;
-        position: absolute;
-        right: 20px;
-        top: 20px;
-    }
-
-    .navbar a {
-        padding: 15px;
-        font-size: 1.2em;
-        width: 100%;
-        text-align: center;
-        border-top: 1px solid #333;
-    }
-}
 
 
 /* Header Styles  */
@@ -58,7 +25,7 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 10%;
+    padding: 15px 5%;
     background: #0c0f15;
     display: flex;
     justify-content: space-between;
@@ -206,6 +173,7 @@ body{
 /* Profile Container  */
 .profile-container {
     position: relative;
+    
     width: 250px;
     height: 250px;
     border-radius: 50%;
@@ -728,39 +696,49 @@ html {
     }
 }
 
-/* For screens smaller than 768px (typical mobile phones) */
+/* For screens smaller than 768px (typical mobile phones) 1*/
 @media (max-width: 768px) {
     .navbar {
-        display: none; /* Hide the default navbar */
         position: absolute;
-        top: 100%;
+        top: 70px; 
         left: 0;
         width: 100%;
-        background: #0c0f15;
-        border-top: 1px solid rgba(0, 0, 0, .1);
-        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+        background: #191c24;
+        display: none;
         flex-direction: column;
-        align-items: flex-start;
-        padding: 1rem 3%;
+        align-items: center;
+        z-index: 99;
     }
 
     .navbar.active {
-        display: flex; /* Show the navbar when active (for hamburger menu) */
+        display: flex;
+    }
+
+    #menu-icon {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
     }
 
     .navbar a {
-        display: block;
-        margin: 1rem 0;
-        font-size: 1.2rem;
+        padding: 15px;
+        font-size: 1.2em;
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid #333;
+    }
+    
+    .navbar a:last-child {
+        border-bottom: none; /* Cleaner look at the bottom */
     }
 
     .home {
-        flex-direction: column-reverse; /* Stack content and image */
-        padding-top: 10rem;
-        align-items: center;
-        text-align: center;
+        flex-direction: column-reverse;
+        padding-top: 7rem; /* Reduced from 10rem for better fit */
+        height: auto; /* Change to auto so content isn't forced into 100vh */
+        gap: 2rem;
     }
-
     .home-content {
         margin-top: 3rem;
     }
@@ -778,13 +756,36 @@ html {
     }
 
     .profile-container {
-        width: 200px;
-        height: 200px;
-        margin-bottom: 3rem;
+        width: 220px; /* Specific width */
+        height: 220px; /* Specific height to match width for a perfect circle */
+        margin-bottom: 1rem;
+        border: 4px solid purple; /* Added a subtle border for a professional look */
+        box-shadow: 0 0 15px rgba(128, 0, 128, 0.7);
+        transition: 0.3s ease;
+    }
+    .profile-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
+    .home-content h1 {
+        font-size: 2.5rem; /* Better scaling for mobile headers */
+        margin-bottom: 0.5rem;
+    }
     .about-img {
-        width: 90%;
+        width: 250px; /* Adjust size as needed */
+        height: 250px; /* MUST be the same as width for a circle */
+        margin: 2rem auto; /* Centers the image on mobile */
+        border-radius: 50%;
+        overflow: hidden;
+        border: 4px solid purple; /* Professional border to match Home section */
+        box-shadow: 0 0 20px purple;
+    }
+    .about-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* This prevents the "oval" squashing effect */
     }
 
     .about-text h2 {
@@ -801,6 +802,43 @@ html {
 
     .contact-form .input-box input {
         width: 100%; /* Full width input fields */
+    }
+    /* --- Technical & Professional Skills Mobile Fix --- */
+    .creative-skills-list {
+        width: 100%; /* Use full width on mobile */
+        padding: 0 10px;
+    }
+
+    .creative-skills-list li {
+        flex-direction: column; /* Stack name, bar, and % vertically */
+        align-items: flex-start;
+        padding: 20px;
+        gap: 8px; /* Space between the label and the progress bar */
+        height: auto; /* Allow the box to grow with content */
+    }
+
+    .skill-info {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .skill-info i {
+        font-size: 1.5rem;
+        margin-right: 12px;
+    }
+
+    .skill-level {
+        width: 100%; /* Progress bar now takes full width */
+        margin: 10px 0; /* Add vertical spacing */
+        height: 12px; /* Make bar slightly thicker for touch screens */
+        margin-left: 0; /* Reset the desktop margin */
+    }
+
+    .skill-percentage {
+        width: 100%;
+        text-align: right; /* Keep the number aligned to the right */
+        font-size: 0.9rem;
+        color: purple; /* Make the percentage stand out */
     }
 }
 
